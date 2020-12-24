@@ -1,0 +1,8 @@
+Jonathan So Task 2
+
+After running the code a few times, there are no changes to the order of execution. The parent process P executes first, 
+then followed by child process Q and then Q again. Finally, child process R is executed last. This is because that is 
+way it is ordered in the code. Process P is the parent process, so it prints the original value of a and computes the value
+of b. Then, fork is called, which creates child process Q, a copy of parent process P. Process Q modifies the values of a and b
+and the process id is the parent id incremented by 1. Process R is then created by forking Q, it modifies the values of a and b
+and its process id is process Q's id incremented by 1.
